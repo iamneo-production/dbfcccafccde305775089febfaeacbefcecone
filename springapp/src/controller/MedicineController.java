@@ -21,7 +21,7 @@ public class MedicineController {
             Medicine medicine=medicineMp.get(medicineId);
             medicine.setMedicineName(updatedMedicine.getMedicineName());
             medicine.setPrice(updatedMedicine.getPrice());
-            medicine.setquantity(updatedMedicine.getQuantity());
+            medicine.setQuantity(updatedMedicine.getQuantity());
             medicine.setDescription(updatedMedicine.getDescription());
             return medicine;
         }

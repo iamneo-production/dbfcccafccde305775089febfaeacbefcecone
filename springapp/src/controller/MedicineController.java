@@ -12,6 +12,19 @@ public class MedicineController {
         if(medicineMap.containsKey(medicine.getMedicineId())){
             return false;
         }
-        medicineMap.put(medicine)
+        medicineMap.put(medicine.getMedicineId(),medicine);
+        return true;
+    }
+    @PutMapping("/{medicineId}")
+    public Medicine updateMedicine(@PathVariable int medicineId,@RequestBody Medicine updatedMedicine){
+        if(medicineMap.containsKey(medicineId)){
+            Medicine medicine=medicineMp.get(medicineId);
+            medicine.setMedicineName(updatedMedicine.getMedicineName());
+            medicine.setPrice(updatedMedicine.getPrice());
+            medicine.setquantity(updatedMedicine.getQuantity());
+            medicine.setDescription(updatedMedicine.getDescription());
+            return medicine;
+        }
+        return null;
     }
 }

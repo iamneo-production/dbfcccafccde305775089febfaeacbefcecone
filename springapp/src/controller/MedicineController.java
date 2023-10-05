@@ -17,7 +17,7 @@ public class MedicineController {
     }
     @PutMapping("/{medicineId}")
     public Medicine updateMedicine(@PathVariable int medicineId,@RequestBody Medicine updatedMedicine){
-        if(medicineMap.containsKey(medicineId)){
+        if (medicineMap.containsKey(medicineId)) {
             Medicine medicine=medicineMp.get(medicineId);
             medicine.setMedicineName(updatedMedicine.getMedicineName());
             medicine.setPrice(updatedMedicine.getPrice());
